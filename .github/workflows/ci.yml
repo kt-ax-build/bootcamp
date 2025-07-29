@@ -1,0 +1,43 @@
+name: ci 
+on:
+  workflow_dispatch:
+#   push:
+#     branches:
+#       - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git config --global user.name "${{ github.actor }}"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - id: cache-key
+        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ steps.cache-key.outputs.cache_id }}
+          path: ~/.cache 
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material 
+      - run: mkdocs gh-deploy --force
+
+    #   - name: Install uv
+    #     uses: astral-sh/setup-uv@v3
+    #   - id: cache-key
+    #     run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_OUTPUT
+    #   - uses: actions/cache@v4
+    #     with:
+    #       key: uv-${{ steps.cache-key.outputs.cache_id }}
+    #       path: ~/.cache 
+    #       restore-keys: |
+    #         uv-
+    #   - run: uv sync 
+    #   - run: uv run mkdocs gh-deploy --force

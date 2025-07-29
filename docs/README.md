@@ -11,11 +11,11 @@ AI 에이전틱 기술을 활용한 현대적 소프트웨어 개발 방법론�
 - [AX Build Agile 소개](agile/ax-build-intro.md)
 
 ### 3. Agile 기반 AI 활용
-- [Agile & AI Agentic Coding 동행](agile-ai/agile-ai-coding.md)
-- [Agile 환경 AI Lead 개발 PoC](agile-ai/ai-lead-poc.md)
-- [Discover: 요구사항 명세(PRD) 기반 분석/설계 과정](agile-ai/discover-prd.md)
-- [Deliver: Planning & Design 과정](agile-ai/deliver-planning.md)
-- [Deliver: Develop & Test 과정](agile-ai/deliver-develop.md)
+- [Agile & AI Agentic Coding 동행](agile-ai-lead/agile-ai-coding.md)
+- [Agile 환경 AI Lead 개발 PoC](agile-ai-lead/ai-lead-poc.md)
+- [Discover: 요구사항 명세(PRD) 기반 분석/설계 과정](agile-ai-lead/discover-prd.md)
+- [Deliver: Planning & Design 과정](agile-ai-lead/deliver-planning.md)
+- [Deliver: Develop & Test 과정](agile-ai-lead/deliver-develop.md)
 
 ### 4. AI Agentic Coding 실습
 - [개발 환경 구성](hands-on/dev-environment.md)
