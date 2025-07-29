@@ -15,9 +15,9 @@ title: AI Agentic Bootcamp
 </script>
 
 <style>
-.md-content h1 {
+/* .md-content h1 {
   display: none;
-}
+} */
 /* .md-header__topic {
   display: none;
 } */

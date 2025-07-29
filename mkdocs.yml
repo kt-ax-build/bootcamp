@@ -1,24 +1,29 @@
 site_name: AI Agentic Bootcamp
 
+extra:
+  homepage: https://kt-ax-build.github.io/bootcamp/
+
 theme:
   name: material
   highlightjs: true
   palette:
     - scheme: default
-      primary: white
-      accent: gray
+      primary: red
+      accent: red
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: grey
-      accent: white
+      primary: red
+      accent: red
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
   font:
     text: "Public Sans"
     code: "Roboto Mono"
+  logo: assets/logo.png
+  favicon: assets/favicon.png
 
 extra_css:
   - extra.css

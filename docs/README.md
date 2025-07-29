@@ -1,6 +1,7 @@
 # AI Agentic Boot Camp 강의 교안
 
-AI 에이전틱 기술을 활용한 현대적 소프트웨어 개발 방법론을 학습하는 부트캠프 강의 교안입니다.
+!!! info "교육 과정 안내"
+    본 교안은 AI 에이전틱 기술과 Agile 방법론을 결합한 실무 중심의 교육 과정입니다.
 
 ## 교육 과정 구성
 
@@ -21,8 +22,3 @@ AI 에이전틱 기술을 활용한 현대적 소프트웨어 개발 방법론�
 - [개발 환경 구성](hands-on/dev-environment.md)
 - [MCP 연동 환경 구성](hands-on/mcp-setup.md)
 - [실습 과제 수행](hands-on/practice-tasks.md)
-
----
-
-!!! info "교육 과정 안내"
-    본 교안은 AI 에이전틱 기술과 Agile 방법론을 결합한 실무 중심의 교육 과정입니다.
