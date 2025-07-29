@@ -121,7 +121,9 @@ uv run mkdocs serve --verbose
 
 ### 수동 배포
 
-왠만하면 실행하지마세요.
+> [!CAUTION]
+> **왠만하면 실행하지마세요.**
+
 
 ```bash
 # GitHub Pages에 배포
