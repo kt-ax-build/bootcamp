@@ -1,0 +1,3 @@
+# Agile 환경 AI Lead 개발 PoC
+
+Agile 환경에서 AI를 활용한 Lead 개발 PoC에 대한 내용입니다. 

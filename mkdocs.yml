@@ -1,0 +1,51 @@
+site_name: AI Agentic Bootcamp
+
+theme:
+  name: material
+  highlightjs: true
+  palette:
+    - scheme: default
+      primary: white
+      accent: gray
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: grey
+      accent: white
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: "Public Sans"
+    code: "Roboto Mono"
+
+extra_css:
+  - extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+plugins:
+  - search:
+      separator: '[\s\u200b\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;'
+  - tags
+  - autorefs
+  - include-markdown
+
+nav:
+    - Introduction: index.md
+    - Curriculum: introduction/course-overview.md
+    - AX Build Agile: agile/ax-build-intro.md
+    - Agile 기반 AI 활용:
+        - Agile & AI Agentic Coding 동행: agile-ai-lead/agile-ai-coding.md
+        - Agile 환경 AI Lead 개발 PoC: agile-ai-lead/ai-lead-poc.md
+        - "Discover: 요구사항 명세(PRD) 기반 분석/설계": agile-ai-lead/discover-prd.md
+        - "Deliver: Planning & Design": agile-ai-lead/deliver-planning.md
+        - "Deliver: Develop & Test": agile-ai-lead/deliver-develop.md
+    - AI Agentic Coding 실습:
+        - 개발 환경 구성: hands-on/dev-environment.md
+        - MCP 연동 환경 구성: hands-on/mcp-setup.md
+        - 실습 과제 수행: hands-on/practice-tasks.md

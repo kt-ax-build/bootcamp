@@ -1,0 +1,10 @@
+/* 전체 콘텐츠 영역의 최대 폭 조정 (기본값은 800~960px) */
+.md-main__inner {
+    max-width: 1440px;  /* 원하는 값으로 변경 */
+    margin: 0 auto;
+}
+
+/* 페이지 제목이 들어가는 영역도 확장 */
+.md-content {
+    max-width: 1440px;
+}
