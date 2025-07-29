@@ -4,11 +4,11 @@ AI 에이전틱 기술을 활용한 현대적 소프트웨어 개발 방법론�
 
 ## 교육 과정 구성
 
-### 1. [교육 과정 소개](introduction/course-overview.md)
-- AI Agentic Boot Camp 교육 과정 소개
+### 1. 교육 과정 소개
+- [AI Agentic Boot Camp 교육 과정 소개](introduction/course-overview.md)
 
-### 2. [AX Build Agile](agile/ax-build-intro.md)
-- AX Build Agile 소개
+### 2. AX Build Agile
+- [AX Build Agile 소개](agile/ax-build-intro.md)
 
 ### 3. Agile 기반 AI 활용
 - [Agile & AI Agentic Coding 동행](agile-ai/agile-ai-coding.md)
