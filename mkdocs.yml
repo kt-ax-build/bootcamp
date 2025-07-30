@@ -1,5 +1,7 @@
 site_name: AI Agentic Bootcamp
 
+copyright: Copyright &copy; 2025 KT AX Build Task Force. All rights reserved.
+
 extra:
   homepage: https://kt-ax-build.github.io/bootcamp/
 
@@ -24,6 +26,13 @@ theme:
     code: "Roboto Mono"
   logo: assets/logo.png
   favicon: assets/favicon.png
+  features:
+    - navigation.indexes
+    - navigation.path
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
 
 extra_css:
   - extra.css
@@ -32,6 +41,8 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - toc:
+      permalink: true
 
 plugins:
   - search:
@@ -39,18 +50,23 @@ plugins:
   - tags
   - autorefs
   - include-markdown
+  - open-in-new-tab
 
 nav:
-    - Introduction: index.md
-    - Curriculum: introduction/course-overview.md
-    - AX Build Agile: agile/ax-build-intro.md
-    - Agile 기반 AI 활용:
-        - Agile & AI Agentic Coding 동행: agile-ai-lead/agile-ai-coding.md
-        - Agile 환경 AI Lead 개발 PoC: agile-ai-lead/ai-lead-poc.md
-        - "Discover: 요구사항 명세(PRD) 기반 분석/설계": agile-ai-lead/discover-prd.md
-        - "Deliver: Planning & Design": agile-ai-lead/deliver-planning.md
-        - "Deliver: Develop & Test": agile-ai-lead/deliver-develop.md
-    - AI Agentic Coding 실습:
-        - 개발 환경 구성: hands-on/dev-environment.md
-        - MCP 연동 환경 구성: hands-on/mcp-setup.md
-        - 실습 과제 수행: hands-on/practice-tasks.md
+  - Introduction:
+    - index.md
+  - Curriculum:
+    - doc-introduction/course-overview.md
+  - AX Build Agile:
+    # - doc-agile/index.md
+    - Agile Build Agile 소개: doc-agile/ax-build-intro.md
+  - Agile 기반 AI 활용:
+    - Agile & AI Agentic Coding 동행: doc-agile-ai-lead/agile-ai-coding.md
+    - Agile 환경 AI Lead 개발 PoC: doc-agile-ai-lead/ai-lead-poc.md
+    - "Discover: 요구사항 명세(PRD) 기반 분석/설계": doc-agile-ai-lead/discover-prd.md
+    - "Deliver: Planning & Design": doc-agile-ai-lead/deliver-planning.md
+    - "Deliver: Develop & Test": doc-agile-ai-lead/deliver-develop.md
+  - AI Agentic Coding 실습:
+    - 개발 환경 구성: doc-hands-on/dev-environment.md
+    - MCP 연동 환경 구성: doc-hands-on/mcp-setup.md
+    - 실습 과제 수행: doc-hands-on/practice-tasks.md
