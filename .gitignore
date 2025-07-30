@@ -11,3 +11,6 @@ wheels/
 
 # mkdocs
 site/
+
+# obsidian
+.obsidian/
