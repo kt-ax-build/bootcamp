@@ -48,12 +48,14 @@ markdown_extensions:
       permalink: true
 
 plugins:
-  - search:
-      separator: '[\s\u200b\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;'
-  - tags
   - autorefs
   - include-markdown
   - open-in-new-tab
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
+  - search:
+      separator: '[\s\u200b\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;'
+  - tags
 
 nav:
   - Introduction:
@@ -67,12 +69,12 @@ nav:
       - doc-agile-ai-lead/agile-ai-coding/index.md
       - "[별첨] Vibe Coding vs Agentic Coding": doc-agile-ai-lead/agile-ai-coding/vibe-vs-agentic.md
     - AI Lead 개발 PoC: doc-agile-ai-lead/ai-lead-poc.md
-    - Discover:
-      - "PRD 기반 분석/설계": doc-agile-ai-lead/discover-prd.md
-      - "초기 Architecture 설계": doc-agile-ai-lead/discover-init-arch.md
-    - Deliver:
-      - "Planning & Design": doc-agile-ai-lead/deliver-planning.md
-      - "Develop & Test": doc-agile-ai-lead/deliver-develop.md
+    - Discover (PRD 기반 분석/설계): doc-agile-ai-lead/discover-prd.md
+    - Deliver (Planning & Design):
+      - doc-agile-ai-lead/deliver-plan/index.md
+      - PRD 기반 UI/UX Design: doc-agile-ai-lead/deliver-plan/prd-uiux-design.md
+      - PRD 기반 User Story: doc-agile-ai-lead/deliver-plan/prd-user-story.md
+      - User Story 기반 Test Scenario: doc-agile-ai-lead/deliver-plan/story-test-scenario.md
   - AI Agentic Coding 실습:
     - 개발 환경 구성: doc-hands-on/dev-environment.md
     - MCP 연동 환경 구성: doc-hands-on/mcp-setup.md
