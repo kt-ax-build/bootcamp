@@ -1,7 +1,3 @@
-물론입니다. 아래는 요청하신 **"AI Agentic Bootcamp" 강의 자료 저장소에 어울리는 Code of Conduct 문서**의 영어 번역본입니다. Contributor Covenant v2.0을 기반으로 하되, 교육 환경과 커뮤니티 운영에 특화된 내용을 자연스럽게 통합하였습니다:
-
----
-
 # Code of Conduct
 
 ## Our Pledge
