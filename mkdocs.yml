@@ -58,15 +58,21 @@ nav:
   - Curriculum:
     - doc-introduction/course-overview.md
   - AX Build Agile:
-    # - doc-agile/index.md
-    - Agile Build Agile 소개: doc-agile/ax-build-intro.md
+    - AX Build Agile 소개: doc-agile/ax-build-intro.md
   - Agile 기반 AI 활용:
-    - Agile & AI Agentic Coding 동행: doc-agile-ai-lead/agile-ai-coding.md
+    - Agile & AI Agentic Coding 동행:
+      - doc-agile-ai-lead/agile-ai-coding/index.md
+      - "[별첨] Vibe Coding vs Agentic Coding": doc-agile-ai-lead/agile-ai-coding/vibe-vs-agentic.md
     - Agile 환경 AI Lead 개발 PoC: doc-agile-ai-lead/ai-lead-poc.md
-    - "Discover: 요구사항 명세(PRD) 기반 분석/설계": doc-agile-ai-lead/discover-prd.md
-    - "Deliver: Planning & Design": doc-agile-ai-lead/deliver-planning.md
-    - "Deliver: Develop & Test": doc-agile-ai-lead/deliver-develop.md
+    - Discover:
+      - "PRD 기반 분석/설계": doc-agile-ai-lead/discover-prd.md
+    - Deliver:
+      - "Planning & Design": doc-agile-ai-lead/deliver-planning.md
+      - "Develop & Test": doc-agile-ai-lead/deliver-develop.md
   - AI Agentic Coding 실습:
     - 개발 환경 구성: doc-hands-on/dev-environment.md
     - MCP 연동 환경 구성: doc-hands-on/mcp-setup.md
-    - 실습 과제 수행: doc-hands-on/practice-tasks.md
+    - 실습 과제 수행:
+      - Backend: doc-hands-on/hands-on-task/backend.md
+      - Frontend: doc-hands-on/hands-on-task/frontend.md
+      - Test Case 및 Code: doc-hands-on/hands-on-task/testcode.md
