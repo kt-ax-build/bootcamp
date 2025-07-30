@@ -103,7 +103,7 @@ uv run mkdocs serve --verbose
 - **mkdocs-material**: Material Design 테마
 - **mkdocs-include-markdown-plugin**: 마크다운 파일 include 기능
 - **mkdocs-autorefs**: 자동 참조 링크 생성
-- **mkdocs-build-plantuml-plugin**: PlantUML 다이어그램 지원
+- **mkdocs-puml**: PlantUML 다이어그램 지원
 - **markdown-include**: 마크다운 include 확장
 
 전체 의존성은 `pyproject.toml` 파일에서 확인할 수 있습니다.
