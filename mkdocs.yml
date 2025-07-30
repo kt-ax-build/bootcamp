@@ -22,7 +22,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   font:
-    text: "Public Sans"
+    text: "Hanna"
     code: "Roboto Mono"
   logo: assets/logo.png
   favicon: assets/favicon.png
@@ -33,6 +33,9 @@ theme:
     - navigation.top
     - navigation.tracking
     - toc.follow
+    - content.code.copy
+    - content.code.select
+    - content.tooltips
 
 extra_css:
   - extra.css
@@ -63,9 +66,10 @@ nav:
     - Agile & AI Agentic Coding 동행:
       - doc-agile-ai-lead/agile-ai-coding/index.md
       - "[별첨] Vibe Coding vs Agentic Coding": doc-agile-ai-lead/agile-ai-coding/vibe-vs-agentic.md
-    - Agile 환경 AI Lead 개발 PoC: doc-agile-ai-lead/ai-lead-poc.md
+    - AI Lead 개발 PoC: doc-agile-ai-lead/ai-lead-poc.md
     - Discover:
       - "PRD 기반 분석/설계": doc-agile-ai-lead/discover-prd.md
+      - "초기 Architecture 설계": doc-agile-ai-lead/discover-init-arch.md
     - Deliver:
       - "Planning & Design": doc-agile-ai-lead/deliver-planning.md
       - "Develop & Test": doc-agile-ai-lead/deliver-develop.md
