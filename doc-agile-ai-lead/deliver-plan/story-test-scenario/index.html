@@ -1,0 +1,1496 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../prd-user-story/">
+      
+      
+        <link rel="next" href="../../../doc-hands-on/dev-environment/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>User Story 기반 Test Scenario - AI Agentic Bootcamp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hanna:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Hanna";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-story-test" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://kt-ax-build.github.io/bootcamp/" title="AI Agentic Bootcamp" class="md-header__button md-logo" aria-label="AI Agentic Bootcamp" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Agentic Bootcamp
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User Story 기반 Test Scenario
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://kt-ax-build.github.io/bootcamp/" title="AI Agentic Bootcamp" class="md-nav__button md-logo" aria-label="AI Agentic Bootcamp" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    AI Agentic Bootcamp
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Curriculum
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Curriculum
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-introduction/course-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    AX Build Agile
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AX Build Agile
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-agile/ax-build-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AX Build Agile 소개
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agile 기반 AI 활용
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Agile 기반 AI 활용
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../agile-ai-coding/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Agile & AI Agentic Coding 동행
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Agile & AI Agentic Coding 동행
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agile-ai-coding/vibe-vs-agentic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    [별첨] Vibe Coding vs Agentic Coding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-lead-poc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI Lead 개발 PoC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discover-prd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Discover (PRD 기반 분석/설계)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Deliver (Planning & Design)
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Deliver (Planning & Design)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prd-uiux-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PRD 기반 UI/UX Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prd-user-story/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PRD 기반 User Story
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    User Story 기반 Test Scenario
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Story 기반 Test Scenario
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 범용적인 프롬프트 작성 팁
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 범용적인 프롬프트 작성 팁">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 프롬프트 구조화 원칙
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 프롬프트 작성 체크리스트
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 일반적인 프롬프트 패턴
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 테스트 시나리오 템플릿 생성 프롬프트
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 테스트 시나리오 템플릿 생성 프롬프트">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 템플릿 생성 프롬프트 예시
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 템플릿 커스터마이징 프롬프트
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 템플릿 검증 프롬프트
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. AI 주도 테스트 워크 플로우
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI Agentic Coding 실습
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            AI Agentic Coding 실습
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-hands-on/dev-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    개발 환경 구성
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-hands-on/mcp-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP 연동 환경 구성
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    실습 과제 수행
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            실습 과제 수행
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-hands-on/hands-on-task/backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Backend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-hands-on/hands-on-task/frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frontend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../doc-hands-on/hands-on-task/testcode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test Case 및 Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 범용적인 프롬프트 작성 팁
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 범용적인 프롬프트 작성 팁">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 프롬프트 구조화 원칙
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 프롬프트 작성 체크리스트
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 일반적인 프롬프트 패턴
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 테스트 시나리오 템플릿 생성 프롬프트
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 테스트 시나리오 템플릿 생성 프롬프트">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 템플릿 생성 프롬프트 예시
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 템플릿 커스터마이징 프롬프트
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 템플릿 검증 프롬프트
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. AI 주도 테스트 워크 플로우
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="user-story-test">User Story 기반 Test 시나리오 작성<a class="headerlink" href="#user-story-test" title="Permanent link">&para;</a></h1>
+<h2 id="1">1. 범용적인 프롬프트 작성 팁<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 프롬프트 구조화 원칙<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p><strong>CLEAR 프롬프트 모델</strong></p>
+<div class="admonition quote">
+<ul>
+<li>C - Context (맥락): 프로젝트 배경과 목적 명시</li>
+<li>L - Length (길이): 원하는 출력물의 상세도 지정</li>
+<li>E - Examples (예시): 구체적인 예시나 샘플 제공</li>
+<li>A - Audience (대상): 누구를 위한 것인지 명시</li>
+<li>R - Role (역할): AI에게 부여할 역할 정의</li>
+</ul>
+</div>
+<p><strong>효과적인 프롬프트 작성 단계</strong></p>
+<ul>
+<li>
+<p>1단계: 맥락 설정
+<div class="highlight"><pre><span></span><code>&quot;나는 Agile 프로세스 기반 프로젝트의 SQE(Software Quality Engineer)입니다. 
+현재 [프로젝트명]의 테스트 시나리오를 작성하고 있습니다.&quot;
+</code></pre></div></p>
+</li>
+<li>
+<p>2단계: 구체적 요구사항 명시
+<div class="highlight"><pre><span></span><code>&quot;다음 요구사항을 바탕으로 테스트 시나리오를 작성해주세요:
+- 프로젝트: [프로젝트 설명]
+- 아키텍처: [기술 스택]
+- 테스트 범위: [단위/통합/E2E]
+- 특별 고려사항: [보안, 성능, 접근성 등]&quot;
+</code></pre></div></p>
+</li>
+<li>
+<p>3단계: 출력 형식 지정
+<div class="highlight"><pre><span></span><code>&quot;다음 형식으로 작성해주세요:
+- 테스트 케이스 ID: [TC-XXX-XXX]
+- 입력 데이터: [구체적 데이터]
+- 예상 결과: [명확한 결과]
+- 검증 항목: [체크리스트 형태]&quot;
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="12">1.2 프롬프트 작성 체크리스트<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p><strong>필수 포함 요소</strong></p>
+<div class="admonition quote">
+<ul>
+<li>프로젝트 배경 및 목적</li>
+<li>대상 기술 스택</li>
+<li>테스트 범위 및 레벨</li>
+<li>원하는 출력 형식</li>
+<li>특별 고려사항 (보안, 성능 등) </li>
+<li>예상 품질 기준</li>
+</ul>
+</div>
+<p><strong>프롬프트 최적화 팁</strong></p>
+<div class="admonition quote">
+<ul>
+<li>구체성: "좋은 테스트" → "70% 커버리지 목표의 단위 테스트"</li>
+<li>구조화: 단계별로 나누어 요청</li>
+<li>예시 제공: 원하는 결과물의 샘플 포함</li>
+<li>역할 명시: "테스트 아키텍트로서" 같은 역할 부여</li>
+</ul>
+</div>
+<h3 id="13">1.3 일반적인 프롬프트 패턴<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p><strong>패턴 1: 분석 요청</strong></p>
+<div class="highlight"><pre><span></span><code>&quot;다음 [요구사항/코드/아키텍처]를 분석하여 
+[테스트 전략/시나리오/케이스]를 제안해주세요.
+특히 [특정 관점]에 중점을 두어 분석해주세요.&quot;
+</code></pre></div>
+<p><strong>패턴 2: 템플릿 생성</strong></p>
+<div class="highlight"><pre><span></span><code>&quot;[프로젝트 유형]에 적합한 [테스트 템플릿]을 만들어주세요.
+다음 요소들을 포함해주세요:
+1. [요소1]
+2. [요소2]
+3. [요소3]&quot;
+</code></pre></div>
+<p><strong>패턴 3: 검증 요청</strong></p>
+<div class="highlight"><pre><span></span><code>&quot;작성된 [테스트 시나리오/전략]을 검토하여 
+다음 관점에서 개선점을 제안해주세요:
+- 완성도
+- 실용성
+- 커버리지
+- 유지보수성&quot;
+</code></pre></div>
+<h2 id="2">2. 테스트 시나리오 템플릿 생성 프롬프트<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 템플릿 생성 프롬프트 예시<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>나는 Agile 프로세스 기반 프로젝트의 SQE입니다. 
+다음 프로젝트 정보를 바탕으로 테스트 시나리오 템플릿을 생성해주세요:
+
+프로젝트 정보:
+- 프로젝트명: [프로젝트명]
+- 아키텍처: [백엔드/프론트엔드 기술 스택]
+- 테스트 전략: [테스트 피라미드 구조]
+- 품질 기준: [커버리지 목표, 성능 기준 등]
+
+요구사항:
+[요구사항 목록 또는 링크]
+
+다음 형식으로 템플릿을 작성해주세요:
+1. 단위 테스트 섹션 (Service/Component 레벨)
+2. 모듈 테스트 섹션 (Controller/API 레벨)
+3. 통합 테스트 섹션 (시스템 간 연동)
+4. E2E 테스트 섹션 (사용자 시나리오)
+
+각 테스트 케이스는 다음 요소를 포함해야 합니다:
+- 테스트 케이스 ID (TC-XXX-XXX 형식)
+- 테스트 케이스명 (기능 중심)
+- 입력 데이터 (구체적 값)
+- 예상 결과 (명확한 결과)
+- 검증 항목 (체크리스트)
+
+특별 고려사항:
+- 실제 소스 코드 기반으로 작성
+- 테스트 격리 전략 포함
+- 예외 케이스 포함
+- 비즈니스 로직 검증 중심
+</code></pre></div>
+<h3 id="22">2.2 템플릿 커스터마이징 프롬프트<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>기존 템플릿을 다음 요구사항에 맞게 수정해주세요:
+
+수정 요구사항:
+- [추가할 테스트 레벨]
+- [변경할 테스트 도구]
+- [새로운 품질 기준]
+- [특정 비즈니스 도메인 고려사항]
+
+기존 템플릿의 장점은 유지하면서 
+다음 요소들을 개선해주세요:
+1. [개선 요소 1]
+2. [개선 요소 2]
+3. [개선 요소 3]
+</code></pre></div>
+<h3 id="23">2.3 템플릿 검증 프롬프트<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>다음 테스트 시나리오 템플릿을 검토하여 
+완성도와 실용성을 평가해주세요:
+
+평가 기준:
+- 완성도: 모든 테스트 레벨 포함 여부
+- 실용성: 실제 프로젝트 적용 가능성
+- 확장성: 다른 프로젝트 재사용 가능성
+- 명확성: 이해하기 쉬운 구조
+
+개선 제안사항도 함께 제시해주세요.
+</code></pre></div>
+<h2 id="3-ai">3. AI 주도 테스트 워크 플로우<a class="headerlink" href="#3-ai" title="Permanent link">&para;</a></h2>
+<div class='puml-container'><div class="puml light" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="ACTIVITY" height="860px" preserveAspectRatio="xMidYMid meet" style="width:684px;height:860px;background:#FFFFFF;" version="1.1" viewBox="0 0 684 860" width="684px" zoomAndPan="magnify" class="diagram"><title>AI 주도 테스트 워크플로우</title><defs/><g><g class="title" data-source-line="11"><text fill="#000000" font-family="Verdana" font-size="22" font-weight="bold" lengthAdjust="spacing" textLength="250.5901" x="215.5451" y="35.4209">AI 주도 테스트 워크플로우</text></g><ellipse cx="310.8647" cy="61.6094" fill="#FFFFFF" rx="10" ry="10" style="stroke:#000000;stroke-width:1;"/><path d="M440.6467,81.6094 L440.6467,112.875 L420.6467,116.875 L440.6467,120.875 L440.6467,152.1406 A0,0 0 0 0 440.6467,152.1406 L677.6803,152.1406 A0,0 0 0 0 677.6803,152.1406 L677.6803,91.6094 L667.6803,81.6094 L440.6467,81.6094 A0,0 0 0 0 440.6467,81.6094" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M667.6803,81.6094 L667.6803,91.6094 L677.6803,91.6094 L667.6803,81.6094" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="155.7573" x="446.6467" y="98.6763">• 기본 테스트 시나리오 작성</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="143.7973" x="446.6467" y="113.8091">• 초기 테스트 케이스 정의</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="216.0337" x="446.6467" y="128.9419">• User Story 기반 테스트 케이스 도출</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="115.745" x="446.6467" y="144.0747">• 테스트 데이터 설계</text><rect fill="#FFB6C1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="219.564" x="201.0827" y="99.8906"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="199.564" x="211.0827" y="121.0293">User Story 기반 테스트 시나리오 작성</text><path d="M436.5694,162.1406 L436.5694,193.4063 L416.5694,197.4063 L436.5694,201.4063 L436.5694,232.6719 A0,0 0 0 0 436.5694,232.6719 L597.44,232.6719 A0,0 0 0 0 597.44,232.6719 L597.44,172.1406 L587.44,162.1406 L436.5694,162.1406 A0,0 0 0 0 436.5694,162.1406" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M587.44,162.1406 L587.44,172.1406 L597.44,172.1406 L587.44,162.1406" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="139.8706" x="442.5694" y="179.2075">• Acceptance Criteria</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="87.6927" x="442.5694" y="194.3403">• 기능 요구사항</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="99.6527" x="442.5694" y="209.4731">• 기술적 요구사항</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="87.6927" x="442.5694" y="224.606">• 아키텍처 설계</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="211.4095" x="205.1599" y="180.4219"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="191.4095" x="215.1599" y="201.5605">User Story (AC 포함) + 개발지시서</text><path d="M370.3721,249.5234 L370.3721,265.6563 L350.3721,269.6563 L370.3721,273.6563 L370.3721,289.7891 A0,0 0 0 0 370.3721,289.7891 L479.0648,289.7891 A0,0 0 0 0 479.0648,289.7891 L479.0648,259.5234 L469.0648,249.5234 L370.3721,249.5234 A0,0 0 0 0 370.3721,249.5234" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M469.0648,249.5234 L469.0648,259.5234 L479.0648,259.5234 L469.0648,249.5234" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="87.6927" x="376.3721" y="266.5903">• 소스코드 작성</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="63.7726" x="376.3721" y="281.7231">• 기능 구현</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="79.0149" x="271.3572" y="252.6719"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="59.0149" x="281.3572" y="273.8105">산출물 생성</text><rect fill="#FFFFE0" height="202.0938" style="stroke:#FFA500;stroke-width:2;" width="468.2878" x="177.1853" y="299.7891"/><text fill="#000000" font-family="Verdana" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="107.9457" x="357.3563" y="314.7842">AI 도입 특화 영역</text><path d="M454.5441,336.0859 L454.5441,359.7852 L434.5441,363.7852 L454.5441,367.7852 L454.5441,391.4844 A0,0 0 0 0 454.5441,391.4844 L635.4731,391.4844 A0,0 0 0 0 635.4731,391.4844 L635.4731,346.0859 L625.4731,336.0859 L454.5441,336.0859 A0,0 0 0 0 454.5441,336.0859" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M625.4731,336.0859 L625.4731,346.0859 L635.4731,346.0859 L625.4731,336.0859" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="103.785" x="460.5441" y="353.1528">• 테스트 범위 정의</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="103.785" x="460.5441" y="368.2856">• 테스트 유형 결정</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="159.929" x="460.5441" y="383.4185">• User Story 기반 시나리오</text><rect fill="#FFB6C1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="247.3588" x="187.1853" y="346.8008"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="227.3588" x="197.1853" y="367.9395">테스트 전략 + User Story(AC) + 소스코드</text><path d="M399.8795,426.4844 L399.8795,450.1836 L379.8795,454.1836 L399.8795,458.1836 L399.8795,481.8828 A0,0 0 0 0 399.8795,481.8828 L580.7692,481.8828 A0,0 0 0 0 580.7692,481.8828 L580.7692,436.4844 L570.7692,426.4844 L399.8795,426.4844 A0,0 0 0 0 399.8795,426.4844" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M570.7692,426.4844 L570.7692,436.4844 L580.7692,436.4844 L570.7692,426.4844" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="103.785" x="405.8795" y="443.5513">• 템플릿 기반 작성</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="159.8897" x="405.8795" y="458.6841">• 반복작업 시 동일 형식 유지</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="143.7973" x="405.8795" y="473.8169">• 소스코드 분석 결과 반영</text><rect fill="#FFB6C1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="138.0298" x="241.8498" y="437.1992"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="118.0298" x="251.8498" y="458.3379">테스트 시나리오 고도화</text><path d="M383.3194,511.8828 L383.3194,535.582 L363.3194,539.582 L383.3194,543.582 L383.3194,567.2813 A0,0 0 0 0 383.3194,567.2813 L543.9844,567.2813 A0,0 0 0 0 543.9844,567.2813 L543.9844,521.8828 L533.9844,511.8828 L383.3194,511.8828 A0,0 0 0 0 383.3194,511.8828" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M533.9844,511.8828 L533.9844,521.8828 L543.9844,521.8828 L533.9844,511.8828" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="127.705" x="389.3194" y="528.9497">• 테스트 시나리오 기반</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="139.665" x="389.3194" y="544.0825">• 테스트 프레임워크 선택</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="115.745" x="389.3194" y="559.2153">• 테스트 데이터 준비</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="104.9095" x="258.4099" y="522.5977"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="84.9095" x="268.4099" y="543.7363">테스트 코드 작성</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="164.3842" x="228.6726" y="587.2813"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="144.3842" x="238.6726" y="608.4199">CI/CD 환경에서 테스트 수행</text><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1;" width="611.7293" x="6" y="641.25"/><path d="M159.5898,657.25 L159.5898,680.9492 L139.5898,684.9492 L159.5898,688.9492 L159.5898,712.6484 A0,0 0 0 0 159.5898,712.6484 L284.3748,712.6484 A0,0 0 0 0 284.3748,712.6484 L284.3748,667.25 L274.3748,657.25 L159.5898,657.25 A0,0 0 0 0 159.5898,657.25" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M274.3748,657.25 L274.3748,667.25 L284.3748,667.25 L274.3748,657.25" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="79.865" x="165.5898" y="674.3169">• 배포 전 수행</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="103.785" x="165.5898" y="689.4497">• 개별 모듈 테스트</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="91.825" x="165.5898" y="704.5825">• 단위 기능 검증</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="121.5898" x="18" y="667.9648"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="101.5898" x="28" y="689.1035">Module/Unit Test</text><path d="M422.8397,657.25 L422.8397,680.9492 L402.8397,684.9492 L422.8397,688.9492 L422.8397,712.6484 A0,0 0 0 0 422.8397,712.6484 L603.7293,712.6484 A0,0 0 0 0 603.7293,712.6484 L603.7293,667.25 L593.7293,657.25 L422.8397,657.25 A0,0 0 0 0 422.8397,657.25" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M593.7293,657.25 L593.7293,667.25 L603.7293,667.25 L593.7293,657.25" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="79.865" x="428.8397" y="674.3169">• 배포 후 수행</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="159.8897" x="428.8397" y="689.4497">• 전체 시스템 기본 기능 검증</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="119.8773" x="428.8397" y="704.5825">• 핵심 기능 동작 확인</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="90.4648" x="312.3748" y="667.9648"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="70.4648" x="322.3748" y="689.1035">Smoke Test</text><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1;" width="611.7293" x="6" y="732.6484"/><ellipse cx="310.8647" cy="769.6484" fill="none" rx="11" ry="11" style="stroke:#000000;stroke-width:1;"/><ellipse cx="310.8647" cy="769.6484" fill="#FFFFFF" rx="6" ry="6" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="71.6094" y2="99.8906"/><polygon fill="#000000" points="306.8647,89.8906,310.8647,99.8906,314.8647,89.8906,310.8647,93.8906" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="133.8594" y2="180.4219"/><polygon fill="#000000" points="306.8647,170.4219,310.8647,180.4219,314.8647,170.4219,310.8647,174.4219" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="214.3906" y2="252.6719"/><polygon fill="#000000" points="306.8647,242.6719,310.8647,252.6719,314.8647,242.6719,310.8647,246.6719" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="380.7695" y2="437.1992"/><polygon fill="#000000" points="306.8647,427.1992,310.8647,437.1992,314.8647,427.1992,310.8647,431.1992" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="286.6406" y2="346.8008"/><polygon fill="#000000" points="306.8647,336.8008,310.8647,346.8008,314.8647,336.8008,310.8647,340.8008" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="471.168" y2="522.5977"/><polygon fill="#000000" points="306.8647,512.5977,310.8647,522.5977,314.8647,512.5977,310.8647,516.5977" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="556.5664" y2="587.2813"/><polygon fill="#000000" points="306.8647,577.2813,310.8647,587.2813,314.8647,577.2813,310.8647,581.2813" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="78.7949" x2="78.7949" y1="647.25" y2="667.9648"/><polygon fill="#000000" points="74.7949,657.9648,78.7949,667.9648,82.7949,657.9648,78.7949,661.9648" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="357.6073" x2="357.6073" y1="647.25" y2="667.9648"/><polygon fill="#000000" points="353.6073,657.9648,357.6073,667.9648,361.6073,657.9648,357.6073,661.9648" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="78.7949" x2="78.7949" y1="701.9336" y2="732.6484"/><polygon fill="#000000" points="74.7949,722.6484,78.7949,732.6484,82.7949,722.6484,78.7949,726.6484" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="357.6073" x2="357.6073" y1="701.9336" y2="732.6484"/><polygon fill="#000000" points="353.6073,722.6484,357.6073,732.6484,361.6073,722.6484,357.6073,726.6484" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="621.25" y2="641.25"/><polygon fill="#000000" points="306.8647,631.25,310.8647,641.25,314.8647,631.25,310.8647,635.25" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="738.6484" y2="758.6484"/><polygon fill="#000000" points="306.8647,748.6484,310.8647,758.6484,314.8647,748.6484,310.8647,752.6484" style="stroke:#000000;stroke-width:1;"/><g class="legend" data-source-line="13"><rect fill="none" height="62.8906" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:1;" width="200.7467" x="470.9336" y="784.6484"/><text fill="#000000" font-family="Verdana" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="25.7599" x="480.8076" y="804.6436">색상</text><text fill="#000000" font-family="Verdana" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="25.7599" x="516.3156" y="804.6436">의미</text><rect fill="#E8F4FD" height="16.2969" style="stroke:none;stroke-width:1;" width="35.5079" x="475.9336" y="807.9453"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="475.9336" y="820.9404"> </text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="86.4467" x="515.8917" y="820.9404">개발/실행 단계</text><rect fill="#FFB6C1" height="16.2969" style="stroke:none;stroke-width:1;" width="35.5079" x="475.9336" y="824.2422"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="475.9336" y="837.2373"> </text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="146.3384" x="515.8917" y="837.2373">Test 시나리오 작성 단계</text><line style="stroke:#000000;stroke-width:1;" x1="475.9336" x2="666.6803" y1="791.6484" y2="791.6484"/><line style="stroke:#000000;stroke-width:1;" x1="475.9336" x2="666.6803" y1="807.9453" y2="807.9453"/><line style="stroke:#000000;stroke-width:1;" x1="475.9336" x2="666.6803" y1="824.2422" y2="824.2422"/><line style="stroke:#000000;stroke-width:1;" x1="475.9336" x2="666.6803" y1="840.5391" y2="840.5391"/><line style="stroke:#000000;stroke-width:1;" x1="475.9336" x2="475.9336" y1="791.6484" y2="840.5391"/><line style="stroke:#000000;stroke-width:1;" x1="511.4416" x2="511.4416" y1="791.6484" y2="840.5391"/><line style="stroke:#000000;stroke-width:1;" x1="666.6803" x2="666.6803" y1="791.6484" y2="840.5391"/></g></g></svg></div><div class="puml dark" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="ACTIVITY" height="860px" preserveAspectRatio="xMidYMid meet" style="width:684px;height:860px;background:#FFFFFF;" version="1.1" viewBox="0 0 684 860" width="684px" zoomAndPan="magnify" class="diagram"><title>AI 주도 테스트 워크플로우</title><defs/><g><g class="title" data-source-line="11"><text fill="#000000" font-family="Verdana" font-size="22" font-weight="bold" lengthAdjust="spacing" textLength="250.5901" x="215.5451" y="35.4209">AI 주도 테스트 워크플로우</text></g><ellipse cx="310.8647" cy="61.6094" fill="#FFFFFF" rx="10" ry="10" style="stroke:#000000;stroke-width:1;"/><path d="M440.6467,81.6094 L440.6467,112.875 L420.6467,116.875 L440.6467,120.875 L440.6467,152.1406 A0,0 0 0 0 440.6467,152.1406 L677.6803,152.1406 A0,0 0 0 0 677.6803,152.1406 L677.6803,91.6094 L667.6803,81.6094 L440.6467,81.6094 A0,0 0 0 0 440.6467,81.6094" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M667.6803,81.6094 L667.6803,91.6094 L677.6803,91.6094 L667.6803,81.6094" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="155.7573" x="446.6467" y="98.6763">• 기본 테스트 시나리오 작성</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="143.7973" x="446.6467" y="113.8091">• 초기 테스트 케이스 정의</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="216.0337" x="446.6467" y="128.9419">• User Story 기반 테스트 케이스 도출</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="115.745" x="446.6467" y="144.0747">• 테스트 데이터 설계</text><rect fill="#FFB6C1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="219.564" x="201.0827" y="99.8906"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="199.564" x="211.0827" y="121.0293">User Story 기반 테스트 시나리오 작성</text><path d="M436.5694,162.1406 L436.5694,193.4063 L416.5694,197.4063 L436.5694,201.4063 L436.5694,232.6719 A0,0 0 0 0 436.5694,232.6719 L597.44,232.6719 A0,0 0 0 0 597.44,232.6719 L597.44,172.1406 L587.44,162.1406 L436.5694,162.1406 A0,0 0 0 0 436.5694,162.1406" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M587.44,162.1406 L587.44,172.1406 L597.44,172.1406 L587.44,162.1406" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="139.8706" x="442.5694" y="179.2075">• Acceptance Criteria</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="87.6927" x="442.5694" y="194.3403">• 기능 요구사항</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="99.6527" x="442.5694" y="209.4731">• 기술적 요구사항</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="87.6927" x="442.5694" y="224.606">• 아키텍처 설계</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="211.4095" x="205.1599" y="180.4219"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="191.4095" x="215.1599" y="201.5605">User Story (AC 포함) + 개발지시서</text><path d="M370.3721,249.5234 L370.3721,265.6563 L350.3721,269.6563 L370.3721,273.6563 L370.3721,289.7891 A0,0 0 0 0 370.3721,289.7891 L479.0648,289.7891 A0,0 0 0 0 479.0648,289.7891 L479.0648,259.5234 L469.0648,249.5234 L370.3721,249.5234 A0,0 0 0 0 370.3721,249.5234" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M469.0648,249.5234 L469.0648,259.5234 L479.0648,259.5234 L469.0648,249.5234" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="87.6927" x="376.3721" y="266.5903">• 소스코드 작성</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="63.7726" x="376.3721" y="281.7231">• 기능 구현</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="79.0149" x="271.3572" y="252.6719"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="59.0149" x="281.3572" y="273.8105">산출물 생성</text><rect fill="#FFFFE0" height="202.0938" style="stroke:#FFA500;stroke-width:2;" width="468.2878" x="177.1853" y="299.7891"/><text fill="#000000" font-family="Verdana" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="107.9457" x="357.3563" y="314.7842">AI 도입 특화 영역</text><path d="M454.5441,336.0859 L454.5441,359.7852 L434.5441,363.7852 L454.5441,367.7852 L454.5441,391.4844 A0,0 0 0 0 454.5441,391.4844 L635.4731,391.4844 A0,0 0 0 0 635.4731,391.4844 L635.4731,346.0859 L625.4731,336.0859 L454.5441,336.0859 A0,0 0 0 0 454.5441,336.0859" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M625.4731,336.0859 L625.4731,346.0859 L635.4731,346.0859 L625.4731,336.0859" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="103.785" x="460.5441" y="353.1528">• 테스트 범위 정의</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="103.785" x="460.5441" y="368.2856">• 테스트 유형 결정</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="159.929" x="460.5441" y="383.4185">• User Story 기반 시나리오</text><rect fill="#FFB6C1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="247.3588" x="187.1853" y="346.8008"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="227.3588" x="197.1853" y="367.9395">테스트 전략 + User Story(AC) + 소스코드</text><path d="M399.8795,426.4844 L399.8795,450.1836 L379.8795,454.1836 L399.8795,458.1836 L399.8795,481.8828 A0,0 0 0 0 399.8795,481.8828 L580.7692,481.8828 A0,0 0 0 0 580.7692,481.8828 L580.7692,436.4844 L570.7692,426.4844 L399.8795,426.4844 A0,0 0 0 0 399.8795,426.4844" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M570.7692,426.4844 L570.7692,436.4844 L580.7692,436.4844 L570.7692,426.4844" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="103.785" x="405.8795" y="443.5513">• 템플릿 기반 작성</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="159.8897" x="405.8795" y="458.6841">• 반복작업 시 동일 형식 유지</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="143.7973" x="405.8795" y="473.8169">• 소스코드 분석 결과 반영</text><rect fill="#FFB6C1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="138.0298" x="241.8498" y="437.1992"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="118.0298" x="251.8498" y="458.3379">테스트 시나리오 고도화</text><path d="M383.3194,511.8828 L383.3194,535.582 L363.3194,539.582 L383.3194,543.582 L383.3194,567.2813 A0,0 0 0 0 383.3194,567.2813 L543.9844,567.2813 A0,0 0 0 0 543.9844,567.2813 L543.9844,521.8828 L533.9844,511.8828 L383.3194,511.8828 A0,0 0 0 0 383.3194,511.8828" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M533.9844,511.8828 L533.9844,521.8828 L543.9844,521.8828 L533.9844,511.8828" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="127.705" x="389.3194" y="528.9497">• 테스트 시나리오 기반</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="139.665" x="389.3194" y="544.0825">• 테스트 프레임워크 선택</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="115.745" x="389.3194" y="559.2153">• 테스트 데이터 준비</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="104.9095" x="258.4099" y="522.5977"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="84.9095" x="268.4099" y="543.7363">테스트 코드 작성</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="164.3842" x="228.6726" y="587.2813"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="144.3842" x="238.6726" y="608.4199">CI/CD 환경에서 테스트 수행</text><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1;" width="611.7293" x="6" y="641.25"/><path d="M159.5898,657.25 L159.5898,680.9492 L139.5898,684.9492 L159.5898,688.9492 L159.5898,712.6484 A0,0 0 0 0 159.5898,712.6484 L284.3748,712.6484 A0,0 0 0 0 284.3748,712.6484 L284.3748,667.25 L274.3748,657.25 L159.5898,657.25 A0,0 0 0 0 159.5898,657.25" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M274.3748,657.25 L274.3748,667.25 L284.3748,667.25 L274.3748,657.25" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="79.865" x="165.5898" y="674.3169">• 배포 전 수행</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="103.785" x="165.5898" y="689.4497">• 개별 모듈 테스트</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="91.825" x="165.5898" y="704.5825">• 단위 기능 검증</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="121.5898" x="18" y="667.9648"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="101.5898" x="28" y="689.1035">Module/Unit Test</text><path d="M422.8397,657.25 L422.8397,680.9492 L402.8397,684.9492 L422.8397,688.9492 L422.8397,712.6484 A0,0 0 0 0 422.8397,712.6484 L603.7293,712.6484 A0,0 0 0 0 603.7293,712.6484 L603.7293,667.25 L593.7293,657.25 L422.8397,657.25 A0,0 0 0 0 422.8397,657.25" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><path d="M593.7293,657.25 L593.7293,667.25 L603.7293,667.25 L593.7293,657.25" fill="#FFFFFF" style="stroke:#000000;stroke-width:1;"/><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="79.865" x="428.8397" y="674.3169">• 배포 후 수행</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="159.8897" x="428.8397" y="689.4497">• 전체 시스템 기본 기능 검증</text><text fill="#000000" font-family="Verdana" font-size="13" lengthAdjust="spacing" textLength="119.8773" x="428.8397" y="704.5825">• 핵심 기능 동작 확인</text><rect fill="#E8F4FD" height="33.9688" rx="12.5" ry="12.5" style="stroke:#2E86AB;stroke-width:1;" width="90.4648" x="312.3748" y="667.9648"/><text fill="#000000" font-family="Verdana" font-size="12" lengthAdjust="spacing" textLength="70.4648" x="322.3748" y="689.1035">Smoke Test</text><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:1;" width="611.7293" x="6" y="732.6484"/><ellipse cx="310.8647" cy="769.6484" fill="none" rx="11" ry="11" style="stroke:#000000;stroke-width:1;"/><ellipse cx="310.8647" cy="769.6484" fill="#FFFFFF" rx="6" ry="6" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="71.6094" y2="99.8906"/><polygon fill="#000000" points="306.8647,89.8906,310.8647,99.8906,314.8647,89.8906,310.8647,93.8906" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="133.8594" y2="180.4219"/><polygon fill="#000000" points="306.8647,170.4219,310.8647,180.4219,314.8647,170.4219,310.8647,174.4219" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="214.3906" y2="252.6719"/><polygon fill="#000000" points="306.8647,242.6719,310.8647,252.6719,314.8647,242.6719,310.8647,246.6719" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="380.7695" y2="437.1992"/><polygon fill="#000000" points="306.8647,427.1992,310.8647,437.1992,314.8647,427.1992,310.8647,431.1992" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="286.6406" y2="346.8008"/><polygon fill="#000000" points="306.8647,336.8008,310.8647,346.8008,314.8647,336.8008,310.8647,340.8008" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="471.168" y2="522.5977"/><polygon fill="#000000" points="306.8647,512.5977,310.8647,522.5977,314.8647,512.5977,310.8647,516.5977" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="556.5664" y2="587.2813"/><polygon fill="#000000" points="306.8647,577.2813,310.8647,587.2813,314.8647,577.2813,310.8647,581.2813" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="78.7949" x2="78.7949" y1="647.25" y2="667.9648"/><polygon fill="#000000" points="74.7949,657.9648,78.7949,667.9648,82.7949,657.9648,78.7949,661.9648" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="357.6073" x2="357.6073" y1="647.25" y2="667.9648"/><polygon fill="#000000" points="353.6073,657.9648,357.6073,667.9648,361.6073,657.9648,357.6073,661.9648" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="78.7949" x2="78.7949" y1="701.9336" y2="732.6484"/><polygon fill="#000000" points="74.7949,722.6484,78.7949,732.6484,82.7949,722.6484,78.7949,726.6484" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="357.6073" x2="357.6073" y1="701.9336" y2="732.6484"/><polygon fill="#000000" points="353.6073,722.6484,357.6073,732.6484,361.6073,722.6484,357.6073,726.6484" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="621.25" y2="641.25"/><polygon fill="#000000" points="306.8647,631.25,310.8647,641.25,314.8647,631.25,310.8647,635.25" style="stroke:#000000;stroke-width:1;"/><line style="stroke:#000000;stroke-width:1;" x1="310.8647" x2="310.8647" y1="738.6484" y2="758.6484"/><polygon fill="#000000" points="306.8647,748.6484,310.8647,758.6484,314.8647,748.6484,310.8647,752.6484" style="stroke:#000000;stroke-width:1;"/><g class="legend" data-source-line="13"><rect fill="none" height="62.8906" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:1;" width="200.7467" x="470.9336" y="784.6484"/><text fill="#000000" font-family="Verdana" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="25.7599" x="480.8076" y="804.6436">색상</text><text fill="#000000" font-family="Verdana" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="25.7599" x="516.3156" y="804.6436">의미</text><rect fill="#E8F4FD" height="16.2969" style="stroke:none;stroke-width:1;" width="35.5079" x="475.9336" y="807.9453"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="475.9336" y="820.9404"> </text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="86.4467" x="515.8917" y="820.9404">개발/실행 단계</text><rect fill="#FFB6C1" height="16.2969" style="stroke:none;stroke-width:1;" width="35.5079" x="475.9336" y="824.2422"/><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="475.9336" y="837.2373"> </text><text fill="#000000" font-family="Verdana" font-size="14" lengthAdjust="spacing" textLength="146.3384" x="515.8917" y="837.2373">Test 시나리오 작성 단계</text><line style="stroke:#000000;stroke-width:1;" x1="475.9336" x2="666.6803" y1="791.6484" y2="791.6484"/><line style="stroke:#000000;stroke-width:1;" x1="475.9336" x2="666.6803" y1="807.9453" y2="807.9453"/><line style="stroke:#000000;stroke-width:1;" x1="475.9336" x2="666.6803" y1="824.2422" y2="824.2422"/><line style="stroke:#000000;stroke-width:1;" x1="475.9336" x2="666.6803" y1="840.5391" y2="840.5391"/><line style="stroke:#000000;stroke-width:1;" x1="475.9336" x2="475.9336" y1="791.6484" y2="840.5391"/><line style="stroke:#000000;stroke-width:1;" x1="511.4416" x2="511.4416" y1="791.6484" y2="840.5391"/><line style="stroke:#000000;stroke-width:1;" x1="666.6803" x2="666.6803" y1="791.6484" y2="840.5391"/></g></g></svg></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 KT AX Build Task Force. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.path", "navigation.sections", "navigation.top", "navigation.tracking", "toc.follow", "content.code.copy", "content.code.select", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../js/open_in_new_tab.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>
