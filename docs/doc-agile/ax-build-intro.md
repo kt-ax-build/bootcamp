@@ -140,9 +140,8 @@ Cloud, DevOps, Security 세 영역을 책임지며, 조직의 디지털 인프�
 
 ## 1-5. Agile 개발 단계별 역할
 
+!!! info "별첨"
+    - Agile 소개 with GenSpark: <https://fpdvrxmy.gensparkspace.com/>
+    - File 첨부: [Agile Introduction](../attachments/doc-agile-introduction.pdf)
+
 ![](../attachments/doc-agile-timeline.png)
-
-### 별첨
-
-- Agile 소개 with GenSpark: <https://fpdvrxmy.gensparkspace.com/>
-- File 첨부: [Agile Introduction](../attachments/doc-agile-introduction.pdf)
