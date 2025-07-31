@@ -132,12 +132,133 @@ uv run mkdocs gh-deploy --force
 
 ## 🎯 주요 기능
 
-- **반응형 디자인**: Material Design 테마
-- **다크/라이트 모드**: 테마 전환 기능
-- **검색 기능**: 문서 내 통합 검색
-- **태그 시스템**: 문서 분류 및 필터링
-- **자동 참조**: 문서 간 링크 자동 생성
-- **PlantUML 지원**: 다이어그램 렌더링
+### Material Design 테마 활용
+
+- **반응형 디자인**: Material Design 테마로 모든 디바이스에서 최적화된 UI
+- **다크/라이트 모드**: 사용자 선호에 따른 테마 전환 기능
+- **커스텀 폰트**: 한글 가독성을 위한 "Hanna" 폰트와 코드용 "Roboto Mono" 적용
+- **브랜딩**: 커스텀 로고 및 파비콘 설정
+
+#### mkdocs.yml 설정:
+```yaml
+theme:
+  name: material
+  highlightjs: true
+  palette:
+    - scheme: default
+      primary: red
+      accent: red
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: "Hanna"
+    code: "Roboto Mono"
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+```
+
+### 네비게이션 기능
+
+- **구조화된 탐색**: `navigation.sections`로 문서 구조 명확화
+- **경로 표시**: `navigation.path`로 현재 위치 추적
+- **인덱스 페이지**: `navigation.indexes`로 섹션별 랜딩 페이지 제공
+- **상단 네비게이션**: `navigation.top`으로 빠른 상단 이동
+- **실시간 추적**: `navigation.tracking`으로 URL 자동 업데이트
+
+#### mkdocs.yml 설정:
+```yaml
+theme:
+  features:
+    - navigation.indexes
+    - navigation.path
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - content.code.copy
+    - content.code.select
+    - content.tooltips
+```
+
+### 콘텐츠 기능
+
+- **코드 블록 향상**: 코드 복사(`content.code.copy`) 및 선택(`content.code.select`) 기능
+- **툴팁 지원**: `content.tooltips`로 추가 정보 제공
+- **목차 연동**: `toc.follow`로 읽기 위치에 따른 목차 하이라이트
+
+### Markdown 확장 기능
+
+- **Admonition**: 주의사항, 팁, 경고 등의 강조 박스
+  ```markdown
+  !!! note "참고"
+      중요한 정보를 강조할 때 사용
+  ```
+
+- **Details & Summary**: 접을 수 있는 콘텐츠 섹션
+  ```markdown
+  ??? info "더 보기"
+      숨겨진 내용이 여기에 표시됩니다.
+  ```
+
+- **향상된 코드 블록**: `pymdownx.superfences`로 다양한 언어 지원 및 문법 하이라이트
+- **목차 생성**: `toc` 확장으로 자동 목차 생성 및 고유 링크 제공
+
+#### mkdocs.yml 설정:
+```yaml
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+```
+
+### 플러그인 활용
+
+- **자동 참조**: `autorefs` 플러그인으로 문서 간 링크 자동 생성
+- **파일 포함**: `include-markdown` 플러그인으로 재사용 가능한 콘텐츠 관리
+- **외부 링크**: `open-in-new-tab` 플러그인으로 외부 링크 새 탭 열기
+- **PlantUML 지원**: 다이어그램 및 차트 렌더링
+  ```puml
+  @startuml
+  participant User
+  participant System
+  User -> System: 요청
+  System -> User: 응답
+  @enduml
+  ```
+- **통합 검색**: 한국어 검색 최적화 및 실시간 검색 결과
+- **태그 시스템**: 문서 분류 및 필터링으로 체계적인 콘텐츠 관리
+
+#### mkdocs.yml 설정:
+```yaml
+plugins:
+  - autorefs
+  - include-markdown
+  - open-in-new-tab
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
+  - search:
+      separator: '[\s\u200b\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;'
+  - tags
+```
+
+### 추가 커스터마이징
+
+#### 커스텀 CSS:
+```yaml
+extra_css:
+  - extra.css
+```
+
+이 설정을 통해 `docs/extra.css` 파일에서 추가적인 스타일 커스터마이징이 가능합니다.
 
 ## 🤝 Contributing
 
