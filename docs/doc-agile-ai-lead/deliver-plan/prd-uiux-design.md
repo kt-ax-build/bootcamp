@@ -1,7 +1,5 @@
 # PRD에서 UI/UX Design 설계
 
-IA 없음, 기능 요구사항 존재 
-
 <!-- ??? quote "Prompt Example"
     ```
     **User**

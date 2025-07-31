@@ -14,7 +14,7 @@
 ### 3. Agile 기반 AI 활용
 - [Agile & AI Agentic Coding 동행](doc-agile-ai-lead/agile-ai-coding.md)
 - [Agile 환경 AI Lead 개발 PoC](doc-agile-ai-lead/ai-lead-poc.md)
-- [Discover: 요구사항 명세(PRD) 기반 분석/설계 과정](doc-agile-ai-lead/discover-prd.md)
+- [Discover: 요구사항 명세(PRD) 기반 분석/설계 과정](docs/doc-agile-ai-lead/discover-prd/index.md)
 - [Deliver: Planning & Design 과정](doc-agile-ai-lead/deliver-planning.md)
 - [Deliver: Develop & Test 과정](doc-agile-ai-lead/deliver-develop.md)
 

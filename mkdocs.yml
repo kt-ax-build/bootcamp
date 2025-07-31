@@ -69,7 +69,10 @@ nav:
       - doc-agile-ai-lead/agile-ai-coding/index.md
       - "[별첨] Vibe Coding vs Agentic Coding": doc-agile-ai-lead/agile-ai-coding/vibe-vs-agentic.md
     - AI Lead 개발 PoC: doc-agile-ai-lead/ai-lead-poc.md
-    - Discover (PRD 기반 분석/설계): doc-agile-ai-lead/discover-prd.md
+    - Discover (PRD 기반 분석/설계):
+      - doc-agile-ai-lead/discover-prd/index.md
+      - "사례1: Discover 단계에서 AI 활용": doc-agile-ai-lead/discover-prd/case1-discover.md
+      - "사례2: Discover 단계에서 AI 활용": doc-agile-ai-lead/discover-prd/case2-discover.md
     - Deliver (Planning & Design):
       - doc-agile-ai-lead/deliver-plan/index.md
       - PRD 기반 UI/UX Design: doc-agile-ai-lead/deliver-plan/prd-uiux-design.md

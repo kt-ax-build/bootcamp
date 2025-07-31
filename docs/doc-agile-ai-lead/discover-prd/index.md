@@ -1,4 +1,4 @@
-# Discover 단계에서 요구사항 명세(PRD) 기반 분석/설계 과정
+# Discover: PRD 기반 분석/설계 과정
 
 ## Discover 단계에서 AI 활용 설명
 
@@ -6,4 +6,4 @@ Discover 단계에서는 사업부서(PO)의 요구사항을 바탕으로 기능
 
 AI는 이 과정에서 요구사항 정리, 산출물 초안 작성, Best Practice 추천 등 다양한 업무에 활용되어 생산성과 품질을 높일 수 있습니다.
 
-![](../attachments/discover-prd.png)
+![](../../attachments/discover-prd.png)

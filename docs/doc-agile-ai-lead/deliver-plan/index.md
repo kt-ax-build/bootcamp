@@ -1,4 +1,4 @@
-# Deliver 단계에서 Planning & Design 과정
+# Deliver: Planning & Design 과정
 
 ## Deliver 단계에서 AI 활용 설명
 
