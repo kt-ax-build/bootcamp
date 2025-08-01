@@ -30,6 +30,7 @@ bootcamp/
 │   └── README.md                      # 문서 내용 (index.md에서 include)
 ├── .github/workflows/                 # GitHub Actions 워크플로우
 │   └── ci.yml                         # 자동 배포 설정
+├── main.py                           # MkDocs 매크로 플러그인 설정
 ├── mkdocs.yml                         # MkDocs 설정 파일
 ├── pyproject.toml                     # Python 프로젝트 설정 (uv 기반)
 ├── uv.lock                           # uv 잠금 파일
@@ -91,8 +92,14 @@ mkdocs serve
 # 문서 빌드 (정적 파일 생성)
 uv run mkdocs build
 
-# 문서 구조 확인
+# 문서 구조 확인 (매크로 처리 과정 포함)
 uv run mkdocs serve --verbose
+
+# 매크로 처리 상태 확인 (빌드 시 매크로 오류 디버깅)
+uv run mkdocs build --verbose
+
+# 특정 포트에서 개발 서버 실행
+uv run mkdocs serve -a 127.0.0.1:8080
 ```
 
 ## 📦 사용된 주요 패키지
@@ -101,6 +108,8 @@ uv run mkdocs serve --verbose
 
 - **mkdocs**: 정적 사이트 생성기
 - **mkdocs-material**: Material Design 테마
+- **mkdocs-awesome-nav**: 네비게이션 자동 생성 및 관리
+- **mkdocs-macros-plugin**: 동적 콘텐츠 생성을 위한 매크로 지원
 - **mkdocs-include-markdown-plugin**: 마크다운 파일 include 기능
 - **mkdocs-autorefs**: 자동 참조 링크 생성
 - **mkdocs-puml**: PlantUML 다이어그램 지원
@@ -223,6 +232,8 @@ markdown_extensions:
 ### 플러그인 활용
 
 - **자동 참조**: `autorefs` 플러그인으로 문서 간 링크 자동 생성
+- **스마트 네비게이션**: `awesome-nav` 플러그인으로 디렉토리 구조 기반 자동 메뉴 생성
+- **동적 콘텐츠**: `macros` 플러그인으로 Python 함수를 통한 매크로 기능
 - **파일 포함**: `include-markdown` 플러그인으로 재사용 가능한 콘텐츠 관리
 - **외부 링크**: `open-in-new-tab` 플러그인으로 외부 링크 새 탭 열기
 - **PlantUML 지원**: 다이어그램 및 차트 렌더링
@@ -241,13 +252,76 @@ markdown_extensions:
 ```yaml
 plugins:
   - autorefs
+  - awesome-nav              # 자동 네비게이션 생성
   - include-markdown
+  - macros:                  # 매크로 기능
+      module_name: main
   - open-in-new-tab
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
   - search:
       separator: '[\s\u200b\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;'
   - tags
+```
+
+### 자동화된 네비게이션 및 매크로 기능
+
+#### MkDocs Awesome Nav
+
+`mkdocs-awesome-nav` 플러그인을 통해 네비게이션을 자동으로 생성하고 관리할 수 있습니다:
+
+- **자동 네비게이션**: 디렉토리 구조를 기반으로 자동 메뉴 생성
+- **섹션별 관리**: `.nav.yml` 파일을 통한 유연한 네비게이션 구성
+- **동적 메뉴**: 파일 추가/삭제 시 자동 반영
+
+#### MkDocs Macros Plugin
+
+`mkdocs-macros-plugin`을 통해 동적 콘텐츠 생성이 가능합니다:
+
+**사용 가능한 매크로 함수들:**
+
+- `{{ auto_nav_current_dir() }}`: 현재 디렉토리의 파일들을 자동으로 나열
+- `{{ list_directory_files('경로') }}`: 특정 디렉토리의 파일들을 나열
+- `{{ list_subdirectories('경로') }}`: 특정 디렉토리의 하위 디렉토리들을 나열
+- `{{ get_current_directory() }}`: 현재 페이지가 위치한 디렉토리 이름 반환
+
+**매크로 사용 예시:**
+
+```markdown
+# {{ get_current_directory() | title }} 
+
+이 섹션의 내용을 소개합니다.
+
+## 📖 목차
+{{ auto_nav_current_dir() }}
+
+## 📁 하위 섹션
+{{ list_subdirectories('.') }}
+
+## 특정 디렉토리 파일 목록
+{{ list_directory_files('doc-hands-on') }}
+```
+
+**고급 옵션:**
+
+```markdown
+<!-- .py 파일만 나열 -->
+{{ list_directory_files('scripts', file_extensions=['.py']) }}
+
+<!-- index 파일도 포함해서 나열 -->
+{{ list_directory_files('.', exclude_index=False) }}
+```
+
+**매크로 설정 파일:**
+
+`main.py` 파일에서 매크로 함수들을 정의하고 관리합니다:
+
+```python
+def define_env(env):
+    @env.macro
+    def list_directory_files(directory_path, exclude_index=True, file_extensions=None):
+        # 디렉토리 파일 목록 생성 로직
+        ...
 ```
 
 ### 추가 커스터마이징
@@ -262,12 +336,21 @@ extra_css:
 
 ## 🤝 Contributing
 
-1. 문서 수정은 `docs/` 디렉토리 내 마크다운 파일을 편집
-2. 새로운 페이지 추가 시 `mkdocs.yml`의 `nav` 섹션에 등록
-3. 로컬에서 `uv run mkdocs serve`로 변경사항 확인
-4. Pull Request 생성
+1. **문서 수정**: `docs/` 디렉토리 내 마크다운 파일을 편집
+2. **새로운 페이지 추가**: 
+   - `awesome-nav` 플러그인이 자동으로 메뉴에 반영
+   - 필요시 `docs/.nav.yml` 파일에서 네비게이션 구조 조정
+3. **매크로 기능 확장**: `main.py` 파일에서 새로운 매크로 함수 추가
+4. **동적 콘텐츠 활용**: index 페이지에서 `{{ auto_nav_current_dir() }}` 등의 매크로 사용
+5. **로컬 테스트**: `uv run mkdocs serve`로 변경사항 확인
+6. **Pull Request 생성**
+
+### 매크로 기능 사용 가이드
+
+- **index.md 파일 생성 시**: `{{ auto_nav_current_dir() }}`로 자동 목차 생성
+- **디렉토리 구조 표시**: `{{ list_subdirectories('.') }}`로 하위 폴더 나열
+- **특정 파일 타입 필터링**: `{{ list_directory_files('.', file_extensions=['.py']) }}`
 
 ## 📄 License
 
-- Educational content and documentation: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- Code and scripts: [MIT License](./LICENSE)
+- Educational content and documentation: [CC BY 4.0](./LICENSE)

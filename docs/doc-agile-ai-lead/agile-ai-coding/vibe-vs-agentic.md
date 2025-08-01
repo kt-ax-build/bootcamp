@@ -1,6 +1,8 @@
 
 !!! info "원본 문서 참고"
     - Vibe Coding vs Agentic Coding: Fundamentals and Practical Implications of Agentic AI: [https://www.themoonlight.io/file?url=https%3A%2F%2Farxiv.org%2Fpdf%2F2505.19443](https://www.themoonlight.io/file?url=https%3A%2F%2Farxiv.org%2Fpdf%2F2505.19443)
+
+!!! note "해당 문서는 Google NotebookLM 기반으로 생성되었습니다."
     - NotebookLM Public Page: [https://notebooklm.google.com/notebook/cbe22bb4-289d-4736-b801-9645852aea45](https://notebooklm.google.com/notebook/cbe22bb4-289d-4736-b801-9645852aea45)
 
 ## Summary

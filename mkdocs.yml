@@ -1,9 +1,10 @@
 site_name: AI Agentic Bootcamp
+# site_url: https://kt-ax-build.github.io/bootcamp/
 
 copyright: Copyright &copy; 2025 KT AX Build Task Force. All rights reserved.
 
-extra:
-  homepage: https://kt-ax-build.github.io/bootcamp/
+# extra:
+#   homepage: https://kt-ax-build.github.io/bootcamp/
 
 theme:
   name: material
@@ -30,6 +31,7 @@ theme:
     - navigation.indexes
     - navigation.path
     - navigation.sections
+    # - navigation.tabs
     - navigation.top
     - navigation.tracking
     - toc.follow
@@ -49,39 +51,13 @@ markdown_extensions:
 
 plugins:
   - autorefs
+  - awesome-nav
   - include-markdown
+  - macros:
+      module_name: main
   - open-in-new-tab
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
   - search:
       separator: '[\s\u200b\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;'
   - tags
-
-nav:
-  - Introduction:
-    - index.md
-  - Curriculum:
-    - doc-introduction/course-overview.md
-  - AX Build Agile:
-    - AX Build Agile 소개: doc-agile/ax-build-intro.md
-  - Agile 기반 AI 활용:
-    - Agile & AI Agentic Coding 동행:
-      - doc-agile-ai-lead/agile-ai-coding/index.md
-      - "[별첨] Vibe Coding vs Agentic Coding": doc-agile-ai-lead/agile-ai-coding/vibe-vs-agentic.md
-    - AI Lead 개발 PoC: doc-agile-ai-lead/ai-lead-poc.md
-    - Discover (PRD 기반 분석/설계):
-      - doc-agile-ai-lead/discover-prd/index.md
-      - "사례1: Discover 단계에서 AI 활용": doc-agile-ai-lead/discover-prd/case1-discover.md
-      - "사례2: Discover 단계에서 AI 활용": doc-agile-ai-lead/discover-prd/case2-discover.md
-    - Deliver (Planning & Design):
-      - doc-agile-ai-lead/deliver-plan/index.md
-      - PRD 기반 UI/UX Design: doc-agile-ai-lead/deliver-plan/prd-uiux-design.md
-      - PRD 기반 User Story: doc-agile-ai-lead/deliver-plan/prd-user-story.md
-      - User Story 기반 Test Scenario: doc-agile-ai-lead/deliver-plan/story-test-scenario.md
-  - AI Agentic Coding 실습:
-    - 개발 환경 구성: doc-hands-on/dev-environment.md
-    - MCP 연동 환경 구성: doc-hands-on/mcp-setup.md
-    - 실습 과제 수행:
-      - Backend: doc-hands-on/hands-on-task/backend.md
-      - Frontend: doc-hands-on/hands-on-task/frontend.md
-      - Test Case 및 Code: doc-hands-on/hands-on-task/testcode.md
