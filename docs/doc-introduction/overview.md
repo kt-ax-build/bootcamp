@@ -1,7 +1,26 @@
-# Curriculum
+---
+hide_comments: true
+title: Overview
+---
 
-AI Agentic Bootcamp 과정에서 다루는 주요 커리큘럼입니다.
+<script>
+  // This script only runs in MkDocs, not on GitHub
+  var hideGitHubVersion = function() {
+    document.querySelectorAll('.github-only').forEach(el => el.style.display = 'none');
+  };
 
-## 📚 Contents
+  // Handle both initial load and subsequent navigation
+  document.addEventListener('DOMContentLoaded', hideGitHubVersion);
+  document$.subscribe(hideGitHubVersion);
+</script>
 
-{{ auto_nav_current_dir() }}
+<style>
+/* .md-content h1 {
+  display: none;
+} */
+/* .md-header__topic {
+  display: none;
+} */
+</style>
+
+{% include-markdown "../README.md" %}
