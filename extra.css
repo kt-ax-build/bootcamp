@@ -22,7 +22,11 @@ th, td {
 }
 
 th {
-  background-color: #f5f5f5;
+  background-color: #dfdfdf;
+}
+
+td {
+  background-color: #f7f9fa;
 }
 
 .md-typeset__table {
