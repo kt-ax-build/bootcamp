@@ -1,4 +1,3 @@
-# AI Agentic Boot Camp 강의 교안
 
 !!! info "교육 과정 안내"
     본 교안은 AI 에이전틱 기술과 Agile 방법론을 결합한 실무 중심의 교육 과정입니다.
