@@ -1,7 +1,7 @@
 nav:
   - Introduction:
-    - Table of Contents: toc.md
-    - Course Overview: doc-introduction/course-overview.md
+    - Overview: doc-introduction/overview.md
+    - Curriculum: doc-introduction/curriculum.md
   - AX Build Agile:
     - AX Build Agile 소개: doc-agile/ax-build-intro.md
   - Agile 기반 AI 활용:
