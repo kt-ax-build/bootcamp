@@ -2,8 +2,9 @@ nav:
   - Introduction:
     - Overview: doc-introduction/overview.md
     - Curriculum: doc-introduction/curriculum.md
-  - AX Build Agile:
-    - AX Build Agile 소개: doc-agile/ax-build-intro.md
+    - AX Build Agile 소개: doc-introduction/ax-build-intro.md
+  # - AX Build Agile:
+  #   - AX Build Agile 소개: doc-agile/ax-build-intro.md
   - Agile 기반 AI 활용:
     - Agile & AI Agentic Coding 동행:
       - doc-agile-ai-lead/agile-ai-coding/index.md

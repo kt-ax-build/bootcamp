@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 hide_comments: true
 title: AI Agentic Bootcamp
 ---
@@ -26,10 +29,6 @@ title: AI Agentic Bootcamp
       </span>
     </h1>
     
-    <p class="hero-subtitle">
-      차세대 개발자를 위한 개발 가이드
-    </p>
-    
     <div class="hero-features">
       <div class="feature-list">
         <div class="feature-item">
@@ -55,6 +54,32 @@ title: AI Agentic Bootcamp
   display: none;
 }
 
+/* md-main 영역에 정확히 맞춤 */
+.md-main {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  min-height: 80vh;
+}
+
+.md-main__inner {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.md-content {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.md-content__inner {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
@@ -62,9 +87,10 @@ title: AI Agentic Bootcamp
   color: white;
   padding: 4rem 2rem;
   text-align: center;
-  margin: -1.5rem -1.5rem 0 -1.5rem;
+  margin: 0;
+  width: 100%;
   overflow: hidden;
-  min-height: 60vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +109,7 @@ title: AI Agentic Bootcamp
   position: absolute;
   font-size: 2rem;
   opacity: 0.3;
-  animation: float 6s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 
 .floating-icon:nth-child(1) {
@@ -95,19 +121,19 @@ title: AI Agentic Bootcamp
 .floating-icon:nth-child(2) {
   top: 20%;
   right: 15%;
-  animation-delay: 1.5s;
+  animation-delay: 0.5s;
 }
 
 .floating-icon:nth-child(3) {
   bottom: 30%;
   left: 20%;
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 
 .floating-icon:nth-child(4) {
   bottom: 15%;
   right: 10%;
-  animation-delay: 4.5s;
+  animation-delay: 2s;
 }
 
 @keyframes float {
@@ -118,8 +144,10 @@ title: AI Agentic Bootcamp
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
 }
 
 .hero-badge {
@@ -129,11 +157,12 @@ title: AI Agentic Bootcamp
 
 .badge-glow {
   background: rgba(255, 255, 255, 0.2);
-  padding: 0.8rem 2rem;
+  padding: 1rem 2.5rem;
   border-radius: 3rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   font-weight: 600;
+  font-size: 1.1rem;
   animation: glow 2s ease-in-out infinite alternate;
 }
 
@@ -143,7 +172,7 @@ title: AI Agentic Bootcamp
 }
 
 .hero-title {
-  font-size: 4.5rem;
+  font-size: 5.5rem;
   font-weight: 900;
   margin: 2rem 0;
   line-height: 1.1;
@@ -178,7 +207,7 @@ title: AI Agentic Bootcamp
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 2rem 0;
   opacity: 0.9;
   font-weight: 300;
@@ -190,9 +219,12 @@ title: AI Agentic Bootcamp
 
 .feature-list {
   display: flex;
-  justify-content: center;
-  gap: 3rem;
+  justify-content: space-between;
+  gap: 4rem;
   flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .feature-item {
@@ -204,22 +236,35 @@ title: AI Agentic Bootcamp
 }
 
 .feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
 }
 
 .feature-text {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 400;
   opacity: 0.9;
   white-space: nowrap;
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .feature-list {
+    max-width: 800px;
+    gap: 3rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     padding: 3rem 1rem;
-    min-height: 50vh;
+    margin: 0;
+    width: 100%;
+    min-height: 65vh;
+  }
+  
+  .hero-content {
+    padding: 0 0.5rem;
   }
   
   .hero-title {
@@ -232,6 +277,9 @@ title: AI Agentic Bootcamp
   
   .feature-list {
     gap: 2rem;
+    padding: 0 1rem;
+    max-width: 100%;
+    justify-content: center;
   }
   
   .feature-icon {
@@ -246,7 +294,13 @@ title: AI Agentic Bootcamp
 @media (max-width: 480px) {
   .hero-section {
     padding: 2rem 1rem;
-    min-height: 45vh;
+    margin: 0;
+    width: 100%;
+    min-height: 55vh;
+  }
+  
+  .hero-content {
+    padding: 0 0.5rem;
   }
   
   .hero-title {
@@ -264,6 +318,8 @@ title: AI Agentic Bootcamp
   
   .feature-list {
     gap: 1.5rem;
+    padding: 0 0.5rem;
+    justify-content: center;
   }
   
   .feature-icon {
